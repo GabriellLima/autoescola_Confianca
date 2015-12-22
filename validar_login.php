@@ -3,10 +3,10 @@
     $entrar = $_POST['entrar'];
     $senha = $_POST ["senha"];
     $connect = @mysql_connect('localhost','root','');
-    $db = mysql_select_db('auto_escola');
+    $db = mysql_select_db('autoescola');
         if (isset($entrar)) {
-                     
-            $verifica = mysql_query("SELECT * FROM usuarios WHERE login = '$login' AND senha = '$senha'") or die("erro ao selecionar");
+
+            $verifica = mysql_query("SELECT * FROM usuario WHERE login = '$login' AND senha = '$senha'") or die("erro ao selecionar");
            // echo $verifica;
                 if (mysql_num_rows($verifica)<=0){
                     echo"<script language='javascript' type='text/javascript'>alert('Login e/ou senha incorretos');window.location.href='../index.php';</script>";

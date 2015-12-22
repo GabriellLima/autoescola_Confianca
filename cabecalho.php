@@ -1,41 +1,32 @@
 <!doctype html>
-<html>
+
+<html lang="pt-br">
 <head>
-	<meta charset="utf-8">
-	<title>Menu</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
 
-</head>
-<body>
- <div id="sair"><a href="index.php">Sair</a></div>
-<div id="imagem"> <center><img src="css/img/slogan.png" width="600" height="110" alt=""></center></center></div>
-
-<div>
-	<nav id="nav">
-			<div class="menu_simple">
-
-		
-				<ul>
-					<li><a id="cadastrar"><h3 height="1px;">CADASTRAR</h3></li></a>
-					<li><a href="cadastrar_veiculo.php" id="li">Veículo</a></li>
-					<li><a href="cadastrar_turma.php" id="li">Turma</a></li>
-					<li><a href="cadastrar_aluno.php" id="li">Aluno</a></li>
-					<li><a href="cadastrar_usuario.php" id="li">Usuário</a></li>
-					<li><a href="cadastrar_instrutor.php" id="li">Instrutor</a></li>
-				</ul>
-			
-		
-			</div>
-			
-			
-	</nav><br>
+  <meta charset="utf-8">
+  <title>Auto Escola Confianca</title>
+  <link rel="stylesheet" type="text/css"  href="css/menu_style.css" />
 
 
+  <nav>
+    <ul class="menu">
+      <li><a href="menu.php">Inicio</a></li>
 
+      <li id="instrutor"><a href="instrutor.php">Instrutor</a></li>
 
+      <li id="aluno"><a href="aluno.php">Aluno</a></li>
 
+      <li id="turma"><a href="turma.php">Turma</a></li>
 
-</div>
+      <li id="veiculo"><a href="veiculo.php">Veículo</a></li>
 
+      <li id="usuario"><a href="usuario.php">Usuário</a></li>
+
+	 <li id="relatorio"><a href="../autoescola/relatorio/Relatorio_aluno.php">Relatorio</a></li>
+
+     
+      <li id="bye"><a href="conexao/logout.php">Sair </a></li>
+    </ul>
+  </nav><br><br>
 </body>
 </html>

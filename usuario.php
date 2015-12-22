@@ -1,111 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-	
+
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css"  href="css/menu_style.css" />
+	<link rel="stylesheet" type="text/css"  href="css/style.css" />
+    <link   href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="js/bootstrap.min.js"></script>
 </head>
+
 <body>
 <?php include("cabecalho.php"); ?>
-<div class="crud"><br>
-		<div id="h1"><h1>Usuários</h1><br>
-		<p class="paragrafo_botao_novo" >
-		
-			<button type="submit"><a href="../Auto-Escola-Confianca/CRUDS/cadastrar_Usuario.php"> Novo</a></button>
-		
-		</p>
-		
-		
-		<div class="CSSTable" >
-                <table >
-                    <tr>
-                        <td>
-                          Nome
-                        </td>
-                        <td >
-                            Turno
-                        </td>
-                        <td>
-                           Categoria
-                        </td>
-						 <td>
-                          Ação
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                          valor
-                        </td>
-                        <td>
-                           valor
-                        </td>
-                        <td>
-                           valor
-                        </td>
-						<td>
-							<button type="submit"><a href="../Auto-Escola-Confianca/CRUDS/visualizar_usuario.php"> Visualizar</a></button>
-                           <button type="submit"> <a href="../Auto-Escola-Confianca/CRUDS/atualizar_usuario.php"> Atualizar</a></button>
-						  <button type="submit"> <a href="../Auto-Escola-Confianca/CRUDS/apagar_usuario.php"> Excluir</a></button>
-                        </td>
-                    </tr>
-					<tr>
-					</tr>
-                    <tr>
-                        <td >
-                          valor
-                        </td>
-                        <td>
-                           valor
-                        </td>
-                        <td>
-                           valor
-                        </td>
-						<td>
-							<button type="submit"><a href="../Auto-Escola-Confianca/CRUDS/visualizar_usuario.php"> Visualizar</a></button>
-                           <button type="submit"> <a href="../Auto-Escola-Confianca/CRUDS/atualizar_usuario.php"> Atualizar</a></button>
-						  <button type="submit"> <a href="../Auto-Escola-Confianca/CRUDS/apagar_usuario.php"> Excluir</a></button>
-                        </td>
-                    </tr>
-                   <tr>
-                        <td >
-                          valor
-                        </td>
-                        <td>
-                           valor
-                        </td>
-                        <td>
-                           valor
-                        </td>
-						<td>
-							<button type="submit"><a href="../Auto-Escola-Confianca/CRUDS/visualizar_usuario.php"> Visualizar</a></button>
-                           <button type="submit"> <a href="../Auto-Escola-Confianca/CRUDS/atualizar_usuario.php"> Atualizar</a></button>
-						  <button type="submit"> <a href="../Auto-Escola-Confianca/CRUDS/apagar_usuario.php"> Excluir</a></button>
-                        </td>
-                    </tr>
-					<tr>
-                        <td >
-                          valor
-                        </td>
-                        <td>
-                           valor
-                        </td>
-                        <td>
-                           valor
-                        </td>
-						<td>
-							<button type="submit"><a href="../Auto-Escola-Confianca/CRUDS/visualizar_usuario.php"> Visualizar</a></button>
-                           <button type="submit"> <a href="../Auto-Escola-Confianca/CRUDS/atualizar_usuario.php"> Atualizar</a></button>
-						  <button type="submit"> <a href="../Auto-Escola-Confianca/CRUDS/apagar_usuario.php"> Excluir</a></button>
-                        </td>
-                    </tr>
-                 
-                </table>
-            </div>
-            
-</div>
+    <div class="container">
+        <br><br>
+    		<div class="row">
 
+    			<h3>Usuários</h3><br>
+    		</div>
+			<div class="row">
+				<p>
 
-
-			
-</body>
+					<a href="CRUDS/Cadastrar_Usuario.php" class="btn btn-success">Novo</a>
+				</p>
+				<div id="Layer1" style="position:relative; width:800px; height:400px; z-index:1; overflow: auto">
+				<table class="table table-bordered">
+		              <thead>
+		                <tr>
+		                  <th>login</th>
+										  <th>Açao</th>
+		                </tr>
+		              </thead>
+		              <tbody>
+		              <?php
+					   include 'conexao/database.php';
+					   $pdo = Database::connect();
+					   $sql = 'SELECT * FROM usuario ORDER BY cod_usuario DESC';
+	 				   foreach ($pdo->query($sql) as $row) {
+						   		echo '<tr>';
+							   	echo '<td>'. $row['login'] . '</td>';
+							   	echo '<td>';
+							   	
+							   	echo '<a class="btn btn-success" href="CRUDS/Atualizar_usuario.php?id='.$row['cod_usuario'].'">Atualizar</a>';
+							   	echo '&nbsp;';
+							   	echo '<a class="btn btn-danger" href="conexao_Banco/Excluir_Usuario.php?id='.$row['cod_usuario'].'">Apagar</a>';
+							   	echo '</td>';
+							   	echo '</tr>';
+					   }
+					   Database::disconnect();
+					  ?>
+				      </tbody>
+	            </table>
+					</div>
+    	</div>
+    </div> <!-- /container -->
+  </body>
 </html>

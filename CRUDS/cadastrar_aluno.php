@@ -1,58 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="../css/style.css" />
-	</head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <?php
+require '../conexao/database.php';
+?>
+</head>
 
 <body>
-<center><h1>Cadastrar Aluno</h1></center>
-<div class="form_cadastrar_aluno">
+  <center><h1>Cadastrar Aluno</h1></center>
+  <div class="form_cadastrar_aluno">
 
-<!--label é #alinhar e input é #form_usuario-->
-<form id="" action ="#" method="post" >
+    <!--label é #alinhar e input é #form_usuario-->
+    <form id="" action ="../conexao_Banco/Cadastrar_aluno_conexao_banco.php" method="post" >
 
-<label id="alinhar">Nome:</label><br>
-<input class="label2" id="formulario" name="name" maxlength="100" type="text" required placeholder="Nome">
-<br>
-<label id="alinhar">Data de Nascimento:</label><br>
-<input class="label2" id="formulario" name="dt_nascimento" maxlength="10" type="date" required>
-<br>
-<label id="alinhar">CPF:</label><br>
-<input class="label2" id="formulario" type="text" name="cpf" maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" required placeholder="CPF" value="">
-<br>
- <label id="alinhar">Telefone:</label><br>
- <input class="label2" id="formulario"type="tel" name="mobile" required maxlength="13" OnKeyPress="formatar('## #####-####', this)" placeholder="Telefone" value="">
-<br>
-<label id="alinhar">Endereço:</label><br>
-<input class="label2" id="formulario" name="endereco" maxlength="100" type="text" required placeholder="Endereco">
-<br>
-<label id="alinhar">Turno:</label><br>
-<input class="label2" id="formulario"name="turno" type="text" maxlength="20" required placeholder="Turno" value="">
-<br>
-<label id="alinhar">Tipo da Categoria:</label><br>
-<select class="label2" id="formulario" >
-<option >Selecione...</option>
-<option value="a">A</option>
-<option value="b">B</option>
-<option value="c">C</option>
-</select>
- <br>
- <label id="alinhar">Situação:</label><br>
-<select class="label2" id="formulario" >
-<option >Selecione...</option>
-<option value="a">Em aula</option>
-<option value="b">Aprovado</option>
-<option value="c">Reprovado</option>
-</select>
- <br>
- <br>
-    <center> <input type="submit" id="botao" name="cadastrar" value="Cadastrar"/>
-	 <button type="submit"><a href="../aluno.php"> Voltar</a></button></center>
-	
- 
-</form>
+      <label id="alinhar">Nome:</label><br>
+      <input class="label2" id="formulario" name="nome" type="text" required placeholder="Nome">
+      <br>
+      <label id="alinhar">Data de Nascimento:</label><br>
+      <input class="label2" id="formulario" name="nascimento" type="date" required>
+      <br>
+      <label id="alinhar">CPF:</label><br>
+      <input class="label2" id="formulario" type="text" name="cpf"  required placeholder="CPF" value="">
+      <br>
+      <label id="alinhar">Telefone:</label><br>
+      <input class="label2" id="formulario"type="telefone" name="telefone"  required placeholder="Telefone" value="">
+      <br>
+      <label id="alinhar">Endereço:</label><br>
+      <input class="label2" id="formulario" name="endereco" type="text" required placeholder="Endereco">
+      <br>
+      <br>
 
-</div>
+      
+        <label  id="alinhar" class="control-label">Turno:</label>
+        <select name = "turno"  class="label2"  required="required" class = "select bradius" >
+          <option value=""disabled selected style='display:none;'>Selecione o Turno</option>
+          <option value="Matutino">Matutino</option>
+          <option value="Vespertino">Vespertino</option>
+          <option value="Noturno">Noturno</option>
+        </select>
+        <br><br>
+
+        <label  id="alinhar" class="control-label">Categoria:</label>
+        <div class="controls">
+        <select name = "categoria"  class="label2" required="required" class = "select bradius" >
+          <option value=""disabled selected style='display:none;'>Selecione a Categoria</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="A/B">A/B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+          <option value="E">E</option>
+
+        </select>
+      <br><br>
+     
+        <label id="alinhar" class="control-label"> Situação:</label>
+        <div class="controls">
+        <select name = "situacao"  class="label2" required="required" class = "select bradius" >
+          <option value=""disabled selected style='display:none;'>Selecione a Situação</option>
+          <option value="em_aula">Em aula</option>
+          <option value="aprovado">Aprovado</option>
+          <option value="reprovado">Reprovado</option>
+        </select>
+        <br><br>
+
+      </div>
+      <br>
+      <br>
+      <center>
+        <input type="submit" id="botao" name="cadastrar" value="Cadastrar"/>
+        <input type="button" id="botao" onClick="history.go(-1)" name="voltar" value="Voltar"/>
+      </center>
+
+    </div>
+    </form>
+
 </body>
 </html>

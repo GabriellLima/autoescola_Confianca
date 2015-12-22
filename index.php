@@ -19,8 +19,8 @@
           	
             Senha: <label for="senha"></label><input id="label" type="password" class="txt bradius" name="senha"  value="" placeholder="Digite sua Senha"/><br>
 			
-              <center><a href="#">Esqueci minha senha</a></center>
-			  <br><br>
+              
+			  <br>
 			<button id="botao" name="entrar">Entrar</button>
             </center>
             </form>

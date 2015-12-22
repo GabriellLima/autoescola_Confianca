@@ -23,19 +23,18 @@ if (!isset($_SESSION['UsuarioID'])) {
 	if ( !empty($_POST)) {
 		// keep track validation errors
 
-		$loginError = null;
+		$placaError = null;
 
 
 		// keep track post values
 
-		$login = $_POST['login'];
-	
+		$placa = $_POST['placa'];
 
 		// validate input
 		$valid = true;
 
-		if (empty($login)) {
-			$loginError = 'Por favor digite um login';
+		if (empty($placa)) {
+			$loginError = 'Por favor digite uma placa';
 			$valid = false;
 		}
 
@@ -45,20 +44,20 @@ if (!isset($_SESSION['UsuarioID'])) {
 		if ($valid) {
 			$pdo = Database::connect();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql = "UPDATE usuario set login = ? WHERE cod_usuario = ?";
+			$sql = "UPDATE veiculo set placa = ? WHERE cod_veiculo = ?";
 			$q = $pdo->prepare($sql);
-			$q->execute(array($login,$id));
+			$q->execute(array($placa,$id));
 			Database::disconnect();
-			header("Location: ../Usuario.php");
+			header("Location: ../veiculo.php");
 		}
 	} else{
 		$pdo = Database::connect();
 		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		$sql = "SELECT * FROM usuario where cod_usuario = ?";
+		$sql = "SELECT * FROM veiculo where cod_veiculo = ?";
 		$q = $pdo->prepare($sql);
 		$q->execute(array($id));
 		$data = $q->fetch(PDO::FETCH_ASSOC);
-		$login = $data['login'];
+		$placa = $data['placa'];
 		Database::disconnect();
 		}
 ?>
@@ -79,25 +78,22 @@ if (!isset($_SESSION['UsuarioID'])) {
 
     			<div class="span10 offset1">
     				<div class="row">
-		    			<h3>Atualizar Usuário</h3> <br>
+		    			<h3>Atualizar Veículo</h3> <br>
 		    		</div>
 
-	    			<form class="form-horizontal" action="Atualizar_Usuario.php?id=<?php echo $id?>" method="post">
+	    			<form class="form-horizontal" action="atualizar_veiculo.php?id=<?php echo $id?>" method="post">
 
-						<div class="control-group <?php echo !empty($loginError)?'error':'';?>">
-					    <label class="control-label">Login</label>
+						<div class="control-group <?php echo !empty($placaError)?'error':'';?>">
+					    <label class="control-label">Placa:</label>
 					    <div class="controls">
-					      	<input name="login" type="text"  placeholder="Login" value="<?php echo !empty($login)?$login:'';?>">
-					      	<?php if (!empty($loginError)): ?>
-					      		<span class="help-inline"><?php echo $loginError;?></span>
+					      	<input name="placa" type="text"  placeholder="" value="<?php echo !empty($placa)?$placa:'';?>">
+					      	<?php if (!empty($placaError)): ?>
+					      		<span class="help-inline"><?php echo $placaError;?></span>
 					      	<?php endif; ?>
 					    </div>
-
-					
-
 					  <div class="form-actions">
 						  <button type="submit" class="btn btn-success">Atualizar</button>
-						  <a class="btn" href="../Usuario.php">Voltar</a>
+						  <a class="btn" href="../veiculo.php">Voltar</a>
 						</div>
 					</form>
 				</div>

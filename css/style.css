@@ -1,7 +1,8 @@
 *{margin: 0; padding: 0;}
 body{
 
-	background-image:url("../css/img/fundo.jpg");
+	background:#64b5f6;
+	
 }
 form ,h3 {
 	align: center-left;
@@ -55,8 +56,11 @@ margin-top:0px;
 	padding-top:6px;
 	margin: 50px auto;
 	border: 3px solid #8B8B83;
+	box-shadow: 25px 25px 25px #424242;
+}
 }
 #botao{
+	height:5x;
 	padding-bottom:7px;
 	padding-top:6px;
 	padding-left:5px;
@@ -150,7 +154,7 @@ margin-top:0px;
 
 #video{
 	float:right;
-	padding-right:10px;
+	padding-right:200px; 	
 	padding-top:20px;
 	margin:3px;
 }
@@ -169,153 +173,4 @@ margin-top:0px;
 #subtema{
 	padding-top:4px;
 	
-}
-.menu_simple ul {
-
-margin: 0;
-
-padding: 0;
-padding-top:0px;
-
-width:200px;
-
-list-style-type: none;
-
-}
-
-
-.menu_simple ul li a {
-
-text-decoration: none;
-
-color: white;
-
-padding: 6.5px 11px;
-
-background-color: #000080;
-
-display:block;
-
-}
-
-.menu_simple ul li a:visited {
-
-color: white;
-
-
-}
-
-
-.menu_simple ul li a:hover, .menu_simple ul li .current {
-
-color: white;
-
-background-color: #B0E2FF;
-
-}
-.menu_simple ul li #cadastrar #agenda, .menu_simple ul li .current {
-
-color: white;
-
-background-color: #000080;
-border-color:black;
-
-}
-
-/* Tabela do crud*/
-
-Table {
-	margin:0px;padding:0px;
-	width:100%;
-	box-shadow: 10px 10px 5px #888888;
-	border:1px solid #000000;
-	
-	-moz-border-radius-bottomleft:0px;
-	-webkit-border-bottom-left-radius:0px;
-	border-bottom-left-radius:0px;
-	
-	-moz-border-radius-bottomright:0px;
-	-webkit-border-bottom-right-radius:0px;
-	border-bottom-right-radius:0px;
-	
-	-moz-border-radius-topright:0px;
-	-webkit-border-top-right-radius:0px;
-	border-top-right-radius:0px;
-	
-	-moz-border-radius-topleft:0px;
-	-webkit-border-top-left-radius:0px;
-	border-top-left-radius:0px;
-}.CSSTable table{
-    border-collapse: collapse;
-        border-spacing: 0;
-	width:100%;
-	height:100%;
-	margin:50px;padding:50px;
-}.CSSTable tr:last-child td:last-child {
-	-moz-border-radius-bottomright:0px;
-	-webkit-border-bottom-right-radius:0px;
-	border-bottom-right-radius:0px;
-}
-.CSSTable table tr:first-child td:first-child {
-	-moz-border-radius-topleft:0px;
-	-webkit-border-top-left-radius:0px;
-	border-top-left-radius:0px;
-}
-.CSSTable table tr:first-child td:last-child {
-	-moz-border-radius-topright:0px;
-	-webkit-border-top-right-radius:0px;
-	border-top-right-radius:0px;
-}.CSSTable tr:last-child td:first-child{
-	-moz-border-radius-bottomleft:0px;
-	-webkit-border-bottom-left-radius:0px;
-	border-bottom-left-radius:0px;
-}.CSSTable tr:hover td{
-	
-}
-.CSSTable tr:nth-child(odd){ background-color:#0000ff; }
-.CSSTable tr:nth-child(even)    { background-color:#ffffff; }.CSSTable td{
-	vertical-align:middle;
-	
-	
-	border:1px solid #000000;
-	border-width:0px 1px 1px 0px;
-	text-align:left;
-	padding:20px;
-	font-size:14px;
-	font-family:Arial;
-	font-weight:bold;
-	color:#000000;
-}.CSSTable tr:last-child td{
-	border-width:0px 1px 0px 0px;
-}.CSSTable tr td:last-child{
-	border-width:0px 0px 1px 0px;
-}.CSSTable tr:last-child td:last-child{
-	border-width:0px 0px 0px 0px;
-}
-.CSSTable tr:first-child td{
-		background:-o-linear-gradient(bottom, #0000ff 5%, #ffffff 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #0000ff), color-stop(1, #ffffff) );
-	background:-moz-linear-gradient( center top, #0000ff 5%, #ffffff 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#0000ff", endColorstr="#ffffff");	background: -o-linear-gradient(top,#0000ff,ffffff);
-
-	background-color:#0000ff;
-	border:0px solid #000000;
-	text-align:center;
-	border-width:0px 0px 1px 1px;
-	font-size:19px;
-	font-family:Arial;
-	font-weight:bold;
-	color:#ffffff;
-}
-.CSSTable tr:first-child:hover td{
-	background:-o-linear-gradient(bottom, #0000ff 5%, #ffffff 100%);	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #0000ff), color-stop(1, #ffffff) );
-	background:-moz-linear-gradient( center top, #0000ff 5%, #ffffff 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#0000ff", endColorstr="#ffffff");	background: -o-linear-gradient(top,#0000ff,ffffff);
-
-	background-color:#0000ff;
-}
-.CSSTable tr:first-child td:first-child{
-	border-width:0px 0px 1px 0px;
-}
-.CSSTable tr:first-child td:last-child{
-	border-width:0px 0px 1px 1px;
 }
